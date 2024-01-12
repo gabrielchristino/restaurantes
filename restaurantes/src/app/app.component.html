@@ -1,0 +1,17 @@
+<!--<router-outlet></router-outlet>-->
+<main>
+  <div class="corpo lista-opcoes">
+    <form [formGroup]="form">
+      <label for="restaurante">digite os restaurantes abaixo:</label>
+      <input autofocus autocomplete="off" type="text" formControlName="restaurante" id="restaurante" name="restaurante" class="mb-1 mt-1">
+      <button type="submit" class="button__primary" (click)="adicionar()">adicionar</button>
+      <div class="roleta mb-1" id="roleta" [ngClass]="{'rodando_roleta': rodando}">
+        
+        <p [id]="i" *ngFor="let restaurante of listaRestaurantes;let i = index">{{restaurante}}</p>
+      </div>
+      <button class="button__primary" (click)="rodar()">rodar</button>
+    </form>
+
+    
+  </div>
+</main>
